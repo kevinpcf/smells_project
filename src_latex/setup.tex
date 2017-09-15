@@ -27,23 +27,17 @@ Riot	 & Component-based UI library & 3000+ 	 & 159			   & 12000+			 & 96 		   & 
 \vspace{-15pt}
 \end{table*}
 
-The \emph{goal} of our study is to investigate the relation between the occurrence of code smells in JavaScript files and files fault-proneness or vulnerability, as well as the smells survival all along the projects. The \emph{quality focus} is the source code fault-proneness {\color{blue}or vulnerability}, which, if high, can have a concrete effect on the cost of maintenance and evolution of the system. The \emph{perspective} is that of researchers, interested in the relation between code smells and the quality of JavaScript systems. The results of this study are also of interest for developers performing maintenance and evolution activities on JavaScript systems since they need to take
-into account and forecast their effort, and to testers, who need to know which files should be tested in priority. Finally, the results of this study can be of interest to managers and quality assurance teams, who could use code smell detection techniques to assess the fault-proneness {\color{blue}or vulnerability} of in-house or to-be-acquired systems, to better quantify
+The \emph{goal} of our study is to investigate the relation between the {\color{blue}localisation} of code smells in JavaScript files and {\color{blue}lines or line blocks} fault-proneness {\color{blue}of those JavaScript files}, as well as the smells survival all along the projects. The \emph{quality focus} is the source code fault-proneness, which, if high, can have a concrete effect on the cost of maintenance and evolution of the system. The \emph{perspective} is that of researchers, interested in the relation between code smells and the quality of JavaScript systems. The results of this study are also of interest for developers performing maintenance and evolution activities on JavaScript systems since they need to take
+into account and forecast their effort, and to testers, who need to know which files should be tested in priority. Finally, the results of this study can be of interest to managers and quality assurance teams, who could use code smell detection techniques to assess the fault-proneness of in-house or to-be-acquired systems, to better quantify
 the cost-of-ownership of these systems. The \emph{context} of this study consists of 12 types of code smells identified in {\color{blue}fifteen} JavaScript systems. In the following, we introduce our research questions, describe the studied systems, and present our data extraction approach. Furthermore, we describe our model construction and model analysis approaches.
 
 \textbf{(RQ1) Is the risk of fault higher in files with code smells in comparison with those without code smell?}
-Prior works show that code smells increase the fault-proneness of Java classes~\cite{Khomh2012,jaafar2013mining}. Since JavaScript code smells are different from the code smells investigated in these previous studies on Java systems, we are interested in examining the impact that JavaScript code smells can have on the fault-proneness of JavaScript applications.
+Prior works show that code smells increase the fault-proneness of Java classes~\cite{Khomh2012,jaafar2013mining}. Since JavaScript code smells are different from the code smells investigated in these previous studies on Java systems, we are interested in examining the impact that JavaScript code smells can have on the fault-proneness of JavaScript applications. {\color{blue}The work of our predecessors~\cite{saboury2017empirical} showed that JavaScript files with code smells are more likely to be fault-proneness than those without code smells. In this research question, we will refute or confirm this conclusion analysing approaches with finer grain, which means a line grain approach and a line grain including dependencies approach.}
 
 \textbf{(RQ2) Are JavaScript files with code smells equally fault-prone?}
 During maintenance and quality assurance activities, developers are interested in identifying parts of the code that should be tested and--or refactored in priority. Hence, we are interested in identifying code smells that have the most negative impact on JavaScript systems, \ie{} making JavaScript applications more prone to faults.
 
-{\color{blue}\textbf{(RQ3) Is the risk of vulnerability higher in files with code smells in comparison with those without code smell?}
-Similarly to RQ1, we are interested in examining the impact that JavaScript code smells can have on the vulnerability of JavaScript applications.
-	
-\textbf{(RQ4) Are JavaScript files with code smells equally vulnerable?}
-Similarly to RQ2, we are interested in identifying code smells that have the most negative impact on JavaScript systems, \ie{} making JavaScript applications more vulnerable.
-	
-\textbf{(RQ5) How do the smells survive over time?}
+{\color{blue}\textbf{(RQ3) How do the smells survive over time?}
 We are interested here in knowing the genealogy of the smells of project, in order to have a better idea of how long those smells survive, if they are persistent, when they are created during the process life of files, and which are the most dangerous.
 }
 

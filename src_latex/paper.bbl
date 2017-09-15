@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{saboury2017empirical}
+A.~Saboury, P.~Musavi, F.~Khomh, and G.~Antoniol, ``An empirical study of code
+  smells in javascript projects,'' in \emph{Software Analysis, Evolution and
+  Reengineering (SANER), 2017 IEEE 24th International Conference on}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2017, pp. 294--305.
+
 \bibitem{so:survay2016}
 \BIBentryALTinterwordspacing
 Stackoverflow, ``Developer survey results 2016,'' 2016, [Online; accessed
@@ -86,35 +92,6 @@ F.~Jaafar, Y.-G. Gu{\'e}h{\'e}neuc, S.~Hamel, and F.~Khomh, ``Mining the
 ``Eslint: The pluggable linting utility for javascript and jsx.
   http://eslint.org/.''
 
-\bibitem{wordpressjss}
-\BIBentryALTinterwordspacing
-``Wordpress javascript coding standards,'' 2016, [Online; accessed
-  17-October-2016]. [Online]. Available:
-  \url{https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{chaffer2009learning}
-J.~Chaffer, \emph{Learning JQuery 1.3: Better Interaction and Web Development
-  with Simple JavaScript Techniques}.\hskip 1em plus 0.5em minus 0.4em\relax
-  Packt Publishing Ltd, 2009.
-
-\bibitem{martin2009clean}
-R.~C. Martin, \emph{Clean code: a handbook of agile software
-  craftsmanship}.\hskip 1em plus 0.5em minus 0.4em\relax Pearson Education,
-  2009.
-
-\bibitem{fontana2012automatic}
-F.~A. Fontana, P.~Braione, and M.~Zanoni, ``Automatic detection of bad smells
-  in code: An experimental assessment.'' \emph{Journal of Object Technology},
-  vol.~11, no.~2, pp. 5--1, 2012.
-
-\bibitem{griffin2011scaling}
-L.~Griffin, K.~Ryan, E.~de~Leastar, and D.~Botvich, ``Scaling instant messaging
-  communication services: A comparison of blocking and non-blocking
-  techniques,'' in \emph{Computers and Communications (ISCC), 2011 IEEE
-  Symposium on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp.
-  550--557.
-
 \bibitem{brodu2015toward}
 E.~Brodu, S.~Fr{\'e}not, and F.~Obl{\'e}, ``Toward automatic update from
   callbacks to promises,'' in \emph{Proceedings of the 1st Workshop on All-Web
@@ -126,50 +103,17 @@ K.~Gallaba, A.~Mesbah, and I.~Beschastnikh, ``Don't call us, we'll call you:
   International Symposium on Empirical Software Engineering and Measurement
   (ESEM)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2015, pp. 1--10.
 
-\bibitem{ogden2015callback}
-\BIBentryALTinterwordspacing
-M.~Ogden, ``Callback hell,'' 2015, [Online; accessed 14-August-2016]. [Online].
-  Available: \url{http://callbackhell.com}
-\BIBentrySTDinterwordspacing
-
-\bibitem{Jake2014es7}
-\BIBentryALTinterwordspacing
-J.~Archibald, ``Es7 async functions,'' 2014, [Online; accessed 14-August-2016].
-  [Online]. Available:
-  \url{https://jakearchibald.com/2014/es7-async-functions/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{seticert}
-\BIBentryALTinterwordspacing
-``Sei cert c++ coding standard - exp19-cpp. do not perform assignments in
-  conditional expressions,'' [Online; accessed 23-August-2016]. [Online].
-  Available:
-  \url{https://www.securecoding.cert.org/confluence/pages/viewpage.action?pageId=975}
-\BIBentrySTDinterwordspacing
-
 \bibitem{mccabe1976complexity}
 T.~J. McCabe, ``A complexity measure,'' \emph{IEEE Transactions on software
   Engineering}, no.~4, pp. 308--320, 1976.
 
-\bibitem{crockford2008javascript}
-D.~Crockford, \emph{JavaScript: The Good Parts: The Good Parts}.\hskip 1em plus
-  0.5em minus 0.4em\relax O'Reilly Media, Inc., 2008.
-
 \bibitem{marinescu2006object}
 R.~Marinescu and M.~Lanza, ``Object-oriented metrics in practice,'' 2006.
 
-\bibitem{martin1996open}
-R.~C. Martin, ``The open-closed principle,'' \emph{More C++ gems}, pp. 97--112,
-  1996.
-
-\bibitem{martin1999refactoring}
-F.~Martin, B.~Kent, and B.~John, ``Refactoring: improving the design of
-  existing code,'' \emph{Refactoring: Improving the Design of Existing Code},
-  1999.
-
-\bibitem{kerievsky2005refactoring}
-J.~Kerievsky, \emph{Refactoring to patterns}.\hskip 1em plus 0.5em minus
-  0.4em\relax Pearson Deutschland GmbH, 2005.
+\bibitem{fontana2012automatic}
+F.~A. Fontana, P.~Braione, and M.~Zanoni, ``Automatic detection of bad smells
+  in code: An experimental assessment.'' \emph{Journal of Object Technology},
+  vol.~11, no.~2, pp. 5--1, 2012.
 
 \bibitem{mardan2014express}
 A.~Mardan, \emph{Express. js Guide: The Comprehensive Book on Express.

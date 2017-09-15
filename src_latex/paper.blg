@@ -9,9 +9,9 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: references.bib
 Warning--string name "aw" is undefined
---line 1251 of file references.bib
+--line 1269 of file references.bib
 Warning--string name "awadd" is undefined
---line 1257 of file references.bib
+--line 1275 of file references.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -28,45 +28,45 @@ Warning--empty journal in JSHint
 Warning--empty year in JSHint
 
 Done.
-You've used 60 entries,
+You've used 50 entries,
             4039 wiz_defined-function locations,
-            1112 strings with 16814 characters,
-and the built_in function-call counts, 37446 in all, are:
-= -- 2892
-> -- 785
-< -- 260
-+ -- 429
-- -- 133
-* -- 1701
-:= -- 5643
-add.period$ -- 136
-call.type$ -- 60
-change.case$ -- 62
-chr.to.int$ -- 627
-cite$ -- 71
-duplicate$ -- 2793
-empty$ -- 3443
-format.name$ -- 166
-if$ -- 8649
+            1070 strings with 15622 characters,
+and the built_in function-call counts, 33511 in all, are:
+= -- 2586
+> -- 735
+< -- 252
++ -- 402
+- -- 123
+* -- 1558
+:= -- 4949
+add.period$ -- 116
+call.type$ -- 50
+change.case$ -- 52
+chr.to.int$ -- 606
+cite$ -- 61
+duplicate$ -- 2470
+empty$ -- 3022
+format.name$ -- 155
+if$ -- 7770
 int.to.chr$ -- 0
-int.to.str$ -- 60
-missing$ -- 505
-newline$ -- 229
-num.names$ -- 49
-pop$ -- 1337
+int.to.str$ -- 50
+missing$ -- 442
+newline$ -- 191
+num.names$ -- 41
+pop$ -- 1150
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2931
+skip$ -- 2608
 stack$ -- 0
-substring$ -- 1528
-swap$ -- 2042
-text.length$ -- 51
+substring$ -- 1466
+swap$ -- 1860
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 60
+type$ -- 50
 warning$ -- 11
-while$ -- 162
-width$ -- 62
-write$ -- 561
+while$ -- 150
+width$ -- 52
+write$ -- 475
 (There were 13 warnings)

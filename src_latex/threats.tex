@@ -19,8 +19,6 @@ Also, we do not claim causation in this work, we simply report observations and 
 %Therefore, we can not generalize 100\% our results to other JavaScript projects particularly closed-source ones. Even though our study includes a small subset of available JavaScript software, we attempted to mitigate this issues by selecting a diverse number of projects.
 
 {\color{blue}
-\textbf{Threats to external reliability} concern the use of the vulnerability database Snyk\footnote{https://snyk.io/test} to collect vulnerabilities on our studied systems. As said previously, this database presents a lack of completeness and accuracy, and we are aware that a better vulnerability database should be used to provide better observations and conclusions about the vulnerability comparison between files with and without code smells.
-
 \textbf{Threats to internal genealogy construction} is about our way to get the smells genealogy of the studied smells, more specifically the recognition of the smells over time and commits. Indeed, we set a similarity threshold of 70\%, meaning that if two smells of the same type have a similarity greater than 70\%, there are likely the same. Obviously, this threshold is not perfect and can associate two different smells together, or dissociate two smells, which are in reality the same. However, we changed it in order to see if some significant differences would appear, but no relevant difference was revealed.
 	
 }
