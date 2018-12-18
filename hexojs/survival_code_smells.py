@@ -175,7 +175,7 @@ for f in smell_by_file.keys():
             for typeSmell in type_smell:
                 # Si le type de smell apparaît dans le commit, on stocke les lignes liés à ce smell
                 if(typeSmell in smell_by_file[f][c].keys()):
-                    ma_liste = [[smell[1],smell[2]] for smell in smell_by_file[f][c][typeSmell] if smell[0] > seuil[typeSmell]]
+                    ma_liste = [[smell[1][0],smell[2]] for smell in smell_by_file[f][c][typeSmell] if smell[0] >= seuil[typeSmell]]
                     mes_tuples = [tuple(t) for t in ma_liste]
                     mon_set = set(mes_tuples)
                     ma_nouvelle_liste = [list(t) for t in mon_set]

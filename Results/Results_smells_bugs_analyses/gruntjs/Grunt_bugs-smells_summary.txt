@@ -1,219 +1,219 @@
 Results of bugs-smells with file grain
 		Covariate : prevBugs
-			exp(coef) : 1.05077
-			p-value (Cox hazard model) : 0.00323681
-			p-value (Porportional hazards assumption) : 0.924791
+			exp(coef) : 1.01402
+			p-value (Cox hazard model) : 0.000210856
+			p-value (Porportional hazards assumption) : 0.420442
 		Covariate : linesAdded
-			exp(coef) : 0.996637
-			p-value (Cox hazard model) : 0.337518
-			p-value (Porportional hazards assumption) : 0.0318499
+			exp(coef) : 1.00018
+			p-value (Cox hazard model) : 0.553552
+			p-value (Porportional hazards assumption) : 0.812172
 		Covariate : linesRemoved
-			exp(coef) : 0.986752
-			p-value (Cox hazard model) : 0.0136266
-			p-value (Porportional hazards assumption) : 0.79793
+			exp(coef) : 0.993885
+			p-value (Cox hazard model) : 0.0121252
+			p-value (Porportional hazards assumption) : 0.315827
 		Covariate : totalChurn
-			exp(coef) : 0.993818
-			p-value (Cox hazard model) : 0.0287361
-			p-value (Porportional hazards assumption) : 0.0444763
+			exp(coef) : 0.99896
+			p-value (Cox hazard model) : 0.161404
+			p-value (Porportional hazards assumption) : 0.655697
 		Covariate : loc
-			exp(coef) : 0.99978
-			p-value (Cox hazard model) : 0.315181
-			p-value (Porportional hazards assumption) : 0.0452197
+			exp(coef) : 0.999982
+			p-value (Cox hazard model) : 0.809673
+			p-value (Porportional hazards assumption) : 0.451922
 		Covariate : maxstatements
-			exp(coef) : 1.80049
-			p-value (Cox hazard model) : 0.019265
-			p-value (Porportional hazards assumption) : 0.0976817
+			exp(coef) : 1.31963
+			p-value (Cox hazard model) : 0.146664
+			p-value (Porportional hazards assumption) : 0.20243
 		Covariate : maxdepth
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : complexity
-			exp(coef) : 0.94462
-			p-value (Cox hazard model) : 0.874104
-			p-value (Porportional hazards assumption) : 0.755163
+			exp(coef) : 2.01467
+			p-value (Cox hazard model) : 3.21788e-06
+			p-value (Porportional hazards assumption) : 0.766127
 		Covariate : maxlen
-			exp(coef) : 0.711516
-			p-value (Cox hazard model) : 0.120286
-			p-value (Porportional hazards assumption) : 0.182475
+			exp(coef) : 1.2011
+			p-value (Cox hazard model) : 0.138007
+			p-value (Porportional hazards assumption) : 0.414039
 		Covariate : maxparams
-			exp(coef) : 1.84368
-			p-value (Cox hazard model) : 0.111562
-			p-value (Porportional hazards assumption) : 0.65908
+			exp(coef) : 1.3137
+			p-value (Cox hazard model) : 0.394228
+			p-value (Porportional hazards assumption) : 0.126835
 		Covariate : maxnestedcallbacks
-			exp(coef) : 3.60929
-			p-value (Cox hazard model) : 8.61495e-05
-			p-value (Porportional hazards assumption) : 0.649961
+			exp(coef) : 1.98686
+			p-value (Cox hazard model) : 0.0198562
+			p-value (Porportional hazards assumption) : 0.49496
 		Covariate : complexswitchcase
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : thisassign
-			exp(coef) : 8.25318e-07
-			p-value (Cox hazard model) : 0.990206
-			p-value (Porportional hazards assumption) : 0.99984
+			exp(coef) : 8.25435e-07
+			p-value (Cox hazard model) : 0.986536
+			p-value (Porportional hazards assumption) : 0.999649
 		Covariate : complexchaining
-			exp(coef) : 1.08355
-			p-value (Cox hazard model) : 0.725074
-			p-value (Porportional hazards assumption) : 0.770657
+			exp(coef) : 1.20473
+			p-value (Cox hazard model) : 0.214742
+			p-value (Porportional hazards assumption) : 0.369252
 		Covariate : noreassign
-			exp(coef) : 1.42382
-			p-value (Cox hazard model) : 0.0184468
-			p-value (Porportional hazards assumption) : 0.146315
+			exp(coef) : 1.49016
+			p-value (Cox hazard model) : 0.000131342
+			p-value (Porportional hazards assumption) : 0.0429563
 		Covariate : noextrabind
-			exp(coef) : 6.13338e-06
-			p-value (Cox hazard model) : 0.993552
-			p-value (Porportional hazards assumption) : 0.999417
+			exp(coef) : 6.13248e-06
+			p-value (Cox hazard model) : 0.990172
+			p-value (Porportional hazards assumption) : 0.999128
 		Covariate : condassign
-			exp(coef) : 2.00839
-			p-value (Cox hazard model) : 0.00354859
-			p-value (Porportional hazards assumption) : 0.706635
+			exp(coef) : 1.43127
+			p-value (Cox hazard model) : 0.0654925
+			p-value (Porportional hazards assumption) : 0.163357
 		Covariate : smelly
-			exp(coef) : 1.67476
-			p-value (Cox hazard model) : 0.00132764
-			p-value (Porportional hazards assumption) : 0.115607
+			exp(coef) : 1.57346
+			p-value (Cox hazard model) : 2.90762e-05
+			p-value (Porportional hazards assumption) : 0.0395084
 Results of bugs-smells with line grain
 		Covariate : prevBugs
-			exp(coef) : 1.06387
-			p-value (Cox hazard model) : 0.00937741
-			p-value (Porportional hazards assumption) : 0.693293
+			exp(coef) : 1.01727
+			p-value (Cox hazard model) : 9.88303e-05
+			p-value (Porportional hazards assumption) : 0.44496
 		Covariate : linesAdded
-			exp(coef) : 1.00008
-			p-value (Cox hazard model) : 0.945382
-			p-value (Porportional hazards assumption) : 0.783491
+			exp(coef) : 1.00021
+			p-value (Cox hazard model) : 0.478335
+			p-value (Porportional hazards assumption) : 0.781166
 		Covariate : linesRemoved
-			exp(coef) : 0.995537
-			p-value (Cox hazard model) : 0.326627
-			p-value (Porportional hazards assumption) : 0.890941
+			exp(coef) : 0.996784
+			p-value (Cox hazard model) : 0.137639
+			p-value (Porportional hazards assumption) : 0.318965
 		Covariate : totalChurn
-			exp(coef) : 0.998687
-			p-value (Cox hazard model) : 0.465905
-			p-value (Porportional hazards assumption) : 0.533167
+			exp(coef) : 0.999479
+			p-value (Cox hazard model) : 0.375389
+			p-value (Porportional hazards assumption) : 0.770479
 		Covariate : loc
-			exp(coef) : 0.999714
-			p-value (Cox hazard model) : 0.440553
-			p-value (Porportional hazards assumption) : 0.0763983
+			exp(coef) : 0.999955
+			p-value (Cox hazard model) : 0.649085
+			p-value (Porportional hazards assumption) : 0.585699
 		Covariate : maxstatements
-			exp(coef) : 3.88545e-08
-			p-value (Cox hazard model) : 0.991745
-			p-value (Porportional hazards assumption) : 0.999979
+			exp(coef) : 0.638397
+			p-value (Cox hazard model) : 0.0977269
+			p-value (Porportional hazards assumption) : 0.991314
 		Covariate : maxdepth
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : complexity
-			exp(coef) : 1.06337e-07
-			p-value (Cox hazard model) : 0.987835
-			p-value (Porportional hazards assumption) : 0.999892
+			exp(coef) : 0.863756
+			p-value (Cox hazard model) : 0.511801
+			p-value (Porportional hazards assumption) : 0.727797
 		Covariate : maxlen
-			exp(coef) : 0.154306
-			p-value (Cox hazard model) : 3.5933e-05
-			p-value (Porportional hazards assumption) : 0.0527755
+			exp(coef) : 0.407662
+			p-value (Cox hazard model) : 8.77851e-06
+			p-value (Porportional hazards assumption) : 0.596841
 		Covariate : maxparams
-			exp(coef) : 1.09244e-07
-			p-value (Cox hazard model) : 0.991735
-			p-value (Porportional hazards assumption) : 0.999783
+			exp(coef) : 0.392423
+			p-value (Cox hazard model) : 0.106527
+			p-value (Porportional hazards assumption) : 0.344121
 		Covariate : maxnestedcallbacks
-			exp(coef) : 2.96795e-07
-			p-value (Cox hazard model) : 0.989061
-			p-value (Porportional hazards assumption) : 0.999466
+			exp(coef) : 0.825249
+			p-value (Cox hazard model) : 0.670336
+			p-value (Porportional hazards assumption) : 0.338605
 		Covariate : complexswitchcase
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : thisassign
-			exp(coef) : 8.25318e-07
-			p-value (Cox hazard model) : 0.990206
-			p-value (Porportional hazards assumption) : 0.99984
+			exp(coef) : 8.25435e-07
+			p-value (Cox hazard model) : 0.986536
+			p-value (Porportional hazards assumption) : 0.999649
 		Covariate : complexchaining
-			exp(coef) : 0.205823
-			p-value (Cox hazard model) : 0.00172655
-			p-value (Porportional hazards assumption) : 0.940214
+			exp(coef) : 0.420354
+			p-value (Cox hazard model) : 0.000447872
+			p-value (Porportional hazards assumption) : 0.440342
 		Covariate : noreassign
-			exp(coef) : 0.501704
-			p-value (Cox hazard model) : 0.000117465
-			p-value (Porportional hazards assumption) : 0.0260837
+			exp(coef) : 0.892971
+			p-value (Cox hazard model) : 0.312942
+			p-value (Porportional hazards assumption) : 0.116285
 		Covariate : noextrabind
-			exp(coef) : 6.13338e-06
-			p-value (Cox hazard model) : 0.993552
-			p-value (Porportional hazards assumption) : 0.999417
+			exp(coef) : 6.13248e-06
+			p-value (Cox hazard model) : 0.990172
+			p-value (Porportional hazards assumption) : 0.999128
 		Covariate : condassign
-			exp(coef) : 0.31547
-			p-value (Cox hazard model) : 0.0471802
-			p-value (Porportional hazards assumption) : 0.62753
+			exp(coef) : 0.508886
+			p-value (Cox hazard model) : 0.0345788
+			p-value (Porportional hazards assumption) : 0.348585
 		Covariate : smelly
-			exp(coef) : 0.59406
-			p-value (Cox hazard model) : 0.00527182
-			p-value (Porportional hazards assumption) : 0.01863
+			exp(coef) : 0.994385
+			p-value (Cox hazard model) : 0.96098
+			p-value (Porportional hazards assumption) : 0.0681304
 Results of bugs-smells with line grain and considering dependencies
 		Covariate : prevBugs
-			exp(coef) : 1.07157
-			p-value (Cox hazard model) : 0.000352014
-			p-value (Porportional hazards assumption) : 0.494714
+			exp(coef) : 1.01817
+			p-value (Cox hazard model) : 8.41172e-06
+			p-value (Porportional hazards assumption) : 0.494835
 		Covariate : linesAdded
-			exp(coef) : 0.99861
-			p-value (Cox hazard model) : 0.65236
-			p-value (Porportional hazards assumption) : 0.166888
+			exp(coef) : 1.0002
+			p-value (Cox hazard model) : 0.490444
+			p-value (Porportional hazards assumption) : 0.78766
 		Covariate : linesRemoved
-			exp(coef) : 0.991791
-			p-value (Cox hazard model) : 0.0973859
-			p-value (Porportional hazards assumption) : 0.766013
+			exp(coef) : 0.9957
+			p-value (Cox hazard model) : 0.0623634
+			p-value (Porportional hazards assumption) : 0.393708
 		Covariate : totalChurn
-			exp(coef) : 0.996607
-			p-value (Cox hazard model) : 0.189885
-			p-value (Porportional hazards assumption) : 0.16413
+			exp(coef) : 0.999303
+			p-value (Cox hazard model) : 0.292677
+			p-value (Porportional hazards assumption) : 0.690677
 		Covariate : loc
-			exp(coef) : 0.999823
-			p-value (Cox hazard model) : 0.439994
-			p-value (Porportional hazards assumption) : 0.162576
+			exp(coef) : 0.999977
+			p-value (Cox hazard model) : 0.787287
+			p-value (Porportional hazards assumption) : 0.541552
 		Covariate : maxstatements
-			exp(coef) : 0.106003
-			p-value (Cox hazard model) : 0.0251259
-			p-value (Porportional hazards assumption) : 0.0777257
+			exp(coef) : 0.817862
+			p-value (Cox hazard model) : 0.402133
+			p-value (Porportional hazards assumption) : 0.826786
 		Covariate : maxdepth
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : complexity
-			exp(coef) : 0.353606
-			p-value (Cox hazard model) : 0.0735975
-			p-value (Porportional hazards assumption) : 0.225858
+			exp(coef) : 1.27473
+			p-value (Cox hazard model) : 0.191146
+			p-value (Porportional hazards assumption) : 0.949112
 		Covariate : maxlen
-			exp(coef) : 0.401571
-			p-value (Cox hazard model) : 0.00138939
-			p-value (Porportional hazards assumption) : 0.288021
+			exp(coef) : 0.686777
+			p-value (Cox hazard model) : 0.0174908
+			p-value (Porportional hazards assumption) : 0.655017
 		Covariate : maxparams
-			exp(coef) : 1.09244e-07
-			p-value (Cox hazard model) : 0.991735
-			p-value (Porportional hazards assumption) : 0.999783
+			exp(coef) : 0.392423
+			p-value (Cox hazard model) : 0.106527
+			p-value (Porportional hazards assumption) : 0.344121
 		Covariate : maxnestedcallbacks
-			exp(coef) : 2.96795e-07
-			p-value (Cox hazard model) : 0.989061
-			p-value (Porportional hazards assumption) : 0.999466
+			exp(coef) : 0.825249
+			p-value (Cox hazard model) : 0.670336
+			p-value (Porportional hazards assumption) : 0.338605
 		Covariate : complexswitchcase
-			exp(coef) : 8.28116e-07
-			p-value (Cox hazard model) : 0.992729
-			p-value (Porportional hazards assumption) : 0.999944
+			exp(coef) : 8.28194e-07
+			p-value (Cox hazard model) : 0.990036
+			p-value (Porportional hazards assumption) : 0.999814
 		Covariate : thisassign
-			exp(coef) : 8.25318e-07
-			p-value (Cox hazard model) : 0.990206
-			p-value (Porportional hazards assumption) : 0.99984
+			exp(coef) : 8.25435e-07
+			p-value (Cox hazard model) : 0.986536
+			p-value (Porportional hazards assumption) : 0.999649
 		Covariate : complexchaining
-			exp(coef) : 0.617104
-			p-value (Cox hazard model) : 0.103261
-			p-value (Porportional hazards assumption) : 0.965145
+			exp(coef) : 0.689396
+			p-value (Cox hazard model) : 0.055871
+			p-value (Porportional hazards assumption) : 0.393794
 		Covariate : noreassign
-			exp(coef) : 0.914768
-			p-value (Cox hazard model) : 0.576102
-			p-value (Porportional hazards assumption) : 0.0372655
+			exp(coef) : 1.12269
+			p-value (Cox hazard model) : 0.284165
+			p-value (Porportional hazards assumption) : 0.0794628
 		Covariate : noextrabind
-			exp(coef) : 6.13338e-06
-			p-value (Cox hazard model) : 0.993552
-			p-value (Porportional hazards assumption) : 0.999417
+			exp(coef) : 6.13248e-06
+			p-value (Cox hazard model) : 0.990172
+			p-value (Porportional hazards assumption) : 0.999128
 		Covariate : condassign
-			exp(coef) : 0.31547
-			p-value (Cox hazard model) : 0.0471802
-			p-value (Porportional hazards assumption) : 0.62753
+			exp(coef) : 0.508886
+			p-value (Cox hazard model) : 0.0345788
+			p-value (Porportional hazards assumption) : 0.348585
 		Covariate : smelly
-			exp(coef) : 1.08049
-			p-value (Cox hazard model) : 0.646786
-			p-value (Porportional hazards assumption) : 0.0288128
+			exp(coef) : 1.1993
+			p-value (Cox hazard model) : 0.104165
+			p-value (Porportional hazards assumption) : 0.05163

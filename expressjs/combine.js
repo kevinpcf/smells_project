@@ -161,7 +161,7 @@ d.forEach(function (line) {
 		filemap[currentfile].smells[smell[0]] = filemap[currentfile].smells[smell[0]] || [];
 
 		//filemap[currentfile].smells[smell[0]].push(~~smell[3]);
-		filemap[currentfile].smells[smell[0]].push([~~smell[3],~~smell[1],smell[4]]);
+		filemap[currentfile].smells[smell[0]].push([~~smell[3],[~~smell[1],~~smell[5]],smell[4]]);
 		//console.error('Code du smell : '+smell[4]);
 
 		medians[smell[0]] = medians[smell[0]] || [];

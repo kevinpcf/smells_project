@@ -34,8 +34,12 @@ for project in projects:
     os.system('node issues.js '+project+' > issues.json')
 
     # On combine les informations de traçage des smells et des bugs, et on enregistre un premier traçage des smells
+    subprocess.run(['rm','-f','tracing_bugs_with_false_positive.txt'])
+    os.system('node combine.js > tracing_bugs_with_false_positive.txt')
+
+    # On enlève les bugs qui correspondent à des faux positifs introduits par l'algorithme SZZ
     subprocess.run(['rm','-f','tracing_bugs.txt'])
-    os.system('node combine.js > tracing_bugs.txt')
+    os.system('python3 remove_buggy_false_positive.py > tracing_bugs.txt')
 
     # On trace les emplacements des bugs potentiels
     subprocess.run(['rm','-f','emplacements_bugs.txt'])
@@ -46,7 +50,11 @@ for project in projects:
     os.system('python3 tracing_bugs_large.py > emplacements_bugs_large.txt')
 
     # On identifie les fichiers smelly
-    subprocess.run(['python3','set_smelly.py'])
+    subprocess.run(['rm','-f','smells_count.txt'])
+    os.system('python3 set_smelly.py > smells_count.txt')
+
+    # On affiche les boxplots pour chaque type de smell non booléens, quand c'est possible, pour justifier le seuil de poids
+    subprocess.run(['Rscript','boxplot_smells_values.r'])
 
     # On remet en ordre les commits
     subprocess.run(['python3','commit_by_date.py'])

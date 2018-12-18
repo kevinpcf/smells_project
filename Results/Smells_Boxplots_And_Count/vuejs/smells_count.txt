@@ -1,0 +1,12 @@
+Nombre de smells du type max-statements : 25009
+Nombre de smells du type max-depth : 1509
+Nombre de smells du type complexity : 64842
+Nombre de smells du type max-len : 230084
+Nombre de smells du type max-params : 21458
+Nombre de smells du type max-nested-callbacks : 159
+Nombre de smells du type complex-switch-case : 259
+Nombre de smells du type complex-chaining : 7338
+Nombre de smells du type no-reassign : 462302
+Nombre de smells du type no-extra-bind : 0
+Nombre de smells du type cond-assign : 1201
+Nombre de smells du type this-assign : 9780

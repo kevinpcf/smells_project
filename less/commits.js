@@ -69,9 +69,35 @@ function getCommits(cb) {
         stdout.split(/\n/).forEach(function (line) {
             var cmrex = /^commit ([0-9a-f]{40})$/g;
             var match = cmrex.exec(line);
+            // Bugs ID are preceded either by # or by gh-
             var bugs = line.match(/#\d+/g, line);
-            if (match == null && bugs != null) {
-                commits[commits.length-1].fix = bugs.map(b => b.substr(1));
+            if (bugs != null) {bugs = bugs.map(b => b.substr(1));}
+            var bugs2 = line.toLowerCase().match(/gh-\d+/g, line.toLowerCase());
+            if (bugs2 != null) {bugs2 = bugs2.map(b => b.substr(3));}
+            var bugs3 = null;
+            if (bugs != null) {
+                if (bugs2 != null) {
+                    bugs3 = bugs.concat(bugs2);
+                }
+                else {
+                    bugs3 = bugs;
+                }
+            }
+            else if (bugs2 != null) {
+                bugs3 = bugs2;
+            }
+            // Remove duplicate bugs ID
+            var bugs4 = [];
+            if (bugs3 != null) {
+                for (var i = 0; i < bugs3.length; i++) {
+                    if (bugs4.indexOf(bugs3[i]) < 0) {
+                        bugs4.push(bugs3[i]);
+                    }
+                }
+            }
+            if (match == null && bugs3 != null) {
+                commits[commits.length-1].fix = bugs4;
+                //console.error(bugs4);
                 return;
             }
             if (match == null && line.startsWith('Date:   ')) {
@@ -98,7 +124,7 @@ getCommits(function (commits) {
 
         commits.forEachAsync(function (c, next) {
 
-            exec('git diff-tree --no-commit-id --name-status -M -r ' + c.id, {
+            exec('git diff-tree --no-commit-id --name-status --ignore-submodules -M -r ' + c.id, {
                 cwd: 'uut/'
             }, function (error, stdout, stderr) {
                 //console.log(c.id);

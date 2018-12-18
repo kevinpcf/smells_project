@@ -98,7 +98,7 @@ getCommits(function (commits) {
         commits.forEachAsync(function (c, next) {
             // if (c.id != 'a58e3deac27fca9ddbb7e389fdfe7be3aebea639') return next();
             //console.error('!>> git diff-tree --no-commit-id --numstat -M -r ' + c.id + ' -z');
-            exec('git diff-tree --no-commit-id --numstat -M -r -z ' + c.id, {
+            exec('git diff-tree --no-commit-id --numstat --ignore-submodules -M -r -z ' + c.id, {
                 cwd: 'uut/'
             }, function (error, stdout, stderr) {
                 //console.error(JSON.stringify(stdout));
@@ -117,7 +117,7 @@ getCommits(function (commits) {
                     //console.error(JSON.stringify(fmap[e[2]][0]));
                 }
                 //console.error('>>> git diff-tree --no-commit-id --name-status -M -r ' + c.id);
-                exec('git diff-tree --no-commit-id --name-status -M -r -z ' + c.id, {
+                exec('git diff-tree --no-commit-id --name-status --ignore-submodules -M -r -z ' + c.id, {
                     cwd: 'uut/'
                 }, function (error, stdout, stderr) {
                     // On affiche l'id du COMMIT, ainsi que son époque (vis-à-vis des autres COMMITS).
@@ -188,10 +188,12 @@ getCommits(function (commits) {
                                     //g = fs.readFileSync(f).toString().split('\n');
                                     // On stocke les informations des modifications du fichier
                                     var report2 = report['results'][0]['messages'];
+                                    var source = report['results'][0]['source'];
                                     // Pour chaque modification
                                     for(i=0 ; i<report2.length ; i++) {
                                         // Métrique du code smell ("poids")
                                         metric = 0;
+                                        endLine = 0;
                                         // Si un code smell apparaît
                                         if(report2[i]["ruleId"] != null) {
                                             // On stocke le nom du code smell
@@ -201,6 +203,7 @@ getCommits(function (commits) {
                                             if(t=='max-statements') {
                                                 // On répertorie le poids du code smell
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell max-statements : '+metric);
                                             }
 
@@ -208,6 +211,7 @@ getCommits(function (commits) {
                                             if(t=='max-depth') {
                                                 // On répertorie le poids du code smell
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell max-depth : '+metric);
                                             }
 
@@ -215,6 +219,7 @@ getCommits(function (commits) {
                                             if(t=='complexity') {
                                                 // On répertorie le poids du code smell
                                                 metric = report2[i]["message"].split(/(\d+)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell complexity : '+metric);
                                             }
 
@@ -224,18 +229,21 @@ getCommits(function (commits) {
                                                 //console.error("Nombre de caractères sur la ligne : "+source.length)
 
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["line"];
                                                 //console.error('Poids du smell max-len : '+metric);
                                             }
 
                                             // Si le code smell est max-params
                                             if(report2[i]["ruleId"]=='max-params') {
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell max-params : '+metric);
                                             }
 
                                             // Si le code smell est max-nested-callbacks
                                             if(report2[i]["ruleId"]=='max-nested-callbacks') {
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell max-nested-callbacks : '+metric);
                                             }
 
@@ -244,6 +252,7 @@ getCommits(function (commits) {
                                                 t = 'complex-switch-case';
                                                 // On répertorie le poids du code smell
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell complex-switch-case : '+metric);
                                             }
 
@@ -251,6 +260,7 @@ getCommits(function (commits) {
                                             if(t=='no-this-assign') {
                                                 t = 'this-assign';
                                                 metric = 1;
+                                                endLine = report2[i]["line"];
                                                 //console.error('Poids du smell this-assign : '+metric)
                                             }
 
@@ -259,18 +269,21 @@ getCommits(function (commits) {
                                                 t = 'complex-chaining';
                                                 // On répertorie le poids du code smell
                                                 metric = report2[i]["message"].split(/\((\d+)\)/)[1];
+                                                endLine = report2[i]["endLine"];
                                                 //console.error('Poids du smell complex-chaining : '+metric);
                                             }
 
                                             // Si le code smell est no-reassign
                                             if(t=='no-reassign') {
                                                 metric = 1;
+                                                endLine = report2[i]["line"];
                                                 //console.error('Poids du smell no-reassign : '+metric);
                                             }
 
                                             // Si le code smell est no-extra-bind
                                             if(t=='no-extra-bind') {
                                                 metric = 1;
+                                                endLine = report2[i]["line"];
                                                 //console.error('Poids du smell no-extra-bind : '+metric);
                                             }
 
@@ -278,6 +291,7 @@ getCommits(function (commits) {
                                             if(t=='no-cond-assign') {
                                                 t = 'cond-assign';
                                                 metric = 1;
+                                                endLine = report2[i]["line"];
                                                 //console.error('Poids du smell cond-assign : '+metric)
                                             }
 
@@ -287,16 +301,19 @@ getCommits(function (commits) {
                                             //count[t] += 1;
                                             //count[t]+=report2[i]["severity"];
                                             //console.log('%% '+report2[i]["ruleId"].split('/')[report2[i]["ruleId"].split('/').length-1]);
-
-                                            if(report2[i]["source"].substr(report2[i]["column"]-1).length > 100) {
-                                                contenu = report2[i]["source"].substr(report2[i]["column"]-1,100)
+                                            var split_source = source.split(/\r|\n/);
+                                            contenu = split_source[report2[i]["line"]-1].substr(report2[i]["column"]-1);
+                                            if (endLine - report2[i]["line"] > 0) {
+                                                for (var line_number = report2[i]["line"]; line_number < endLine - 1; line_number++) {
+                                                    contenu += split_source[line_number]
+                                                }
                                             }
-                                            else {
-                                                contenu = report2[i]["source"].substr(report2[i]["column"]-1)
+                                            contenu = contenu.trim();
+                                            if(contenu.length > 100) {
+                                                contenu = contenu.substr(0,100)
                                             }
-
-                                            // On affiche le type de code smell, ainsi que sa ligne, sa colonne dans le fichier, et son poids
-                                            console.log('%% ' + t + '\t'+report2[i]["line"] + '\t'+report2[i]["column"]+ '\t'+metric+'\t'+contenu);
+                                            // On affiche le type de code smell, ainsi que sa ligne, sa colonne dans le fichier, son poids, et sa ligne de fin
+                                            console.log('%% ' + t + '\t'+report2[i]["line"] + '\t'+report2[i]["column"]+ '\t'+metric+'\t'+contenu+'\t'+endLine);
                                         }
                                         //else {
                                         //    console.log('%% '+report2[i]["ruleId"]+' '+'1');

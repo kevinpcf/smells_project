@@ -25,7 +25,7 @@ if __name__ == '__main__' :
             bugs = eval(re.sub('\n','',re.sub('Emplacements_des_bugs ','',data[i+2])))
             
             # On se place dans le commit "buggé"
-            os.system('git reset -q --hard && git checkout -q '+commit)
+            os.system('git reset -q --hard && git checkout -q -f '+commit)
 
             # On applique le parsage sur le fichier "buggé" pour élargir les emplacements potentiels de bugs
             subprocess.run(['node','../ast.js',file])

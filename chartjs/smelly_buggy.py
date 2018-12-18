@@ -364,8 +364,9 @@ for f in smell_by_file.keys():
                                         emplacements_bugs = smell_by_file[f][commits[j]][3]
                                         for s in emplacements_smells:
                                             for b in emplacements_bugs:
-                                                if(b[0] <= s and b[1] >= s):
-                                                    correlation = True
+                                                if (b[1] < s[0] or b[0] > s[1]):
+                                                    continue
+                                                correlation = True
                                         if correlation == False:
                                             # On met "event" à 0 car il n'y a pas de lien entre les smells et le bug fix
                                             line["event"] = 0
@@ -384,8 +385,9 @@ for f in smell_by_file.keys():
                                             emplacements_bugs = smell_by_file[f][commits[j]][3]
                                             for s in emplacements_smells:
                                                 for b in emplacements_bugs:
-                                                    if(b[0] <= s and b[1] >= s):
-                                                        correlation = True
+                                                    if (b[1] < s[0] or b[0] > s[1]):
+                                                        continue
+                                                    correlation = True
                                             if correlation == False:
                                                 line["event"+ts] = 0
 
@@ -540,8 +542,9 @@ for f in smell_by_file.keys():
                                         emplacements_bugs = smell_by_file[f][commits[j]][4]
                                         for s in emplacements_smells:
                                             for b in emplacements_bugs:
-                                                if(b[0] <= s and b[1] >= s):
-                                                    correlation = True
+                                                if (b[1] < s[0] or b[0] > s[1]):
+                                                    continue
+                                                correlation = True
                                         if correlation == False:
                                             # On met "event" à 0 car il n'y a pas de lien entre les smells et le bug fix
                                             line["event"] = 0
@@ -560,8 +563,9 @@ for f in smell_by_file.keys():
                                             emplacements_bugs = smell_by_file[f][commits[j]][4]
                                             for s in emplacements_smells:
                                                 for b in emplacements_bugs:
-                                                    if(b[0] <= s and b[1] >= s):
-                                                        correlation = True
+                                                    if (b[1] < s[0] or b[0] > s[1]):
+                                                        continue
+                                                    correlation = True
                                             if correlation == False:
                                                 line["event"+ts] = 0
 

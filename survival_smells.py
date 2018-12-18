@@ -17,6 +17,10 @@ for project in projects:
     # On génère les courbes de survies pour chaque type de smell, à l'aide d'un modèle Cox
     subprocess.run(['Rscript','analyze.r'])
 
+    # On refait de même avec une autre échelle (le nombre de commits au lieu du nombre de jours)
+    subprocess.run(['python3','survival_code_smells_commit_scale.py','0.7'])
+    subprocess.run(['Rscript','analyze_commit_scale.r'])
+
     # On revient dans le répertoire parent
     os.chdir('..')
     print()

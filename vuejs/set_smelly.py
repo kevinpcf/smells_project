@@ -6,7 +6,7 @@ import heapq
 import math
 
 # Ouverture du fichier data.json
-with open("data.json") as json_data:
+with open("data_clean.json") as json_data:
     data = json.load(json_data)
     json_data.close()
 
@@ -15,6 +15,23 @@ smells = ['max-statements','max-depth','complexity','max-len','max-params','max-
 smells_boolean = ['no-reassign','no-extra-bind','cond-assign','this-assign']
 smells_values = {}
 smells_seuil = {}
+smells_count = {}
+
+# Pour chaque type de smell, on va compter combien il y en a en moyenne par commit
+for smell in smells:
+    smells_count[smell] = 0
+for smell in smells_boolean:
+    smells_count[smell] = 0
+Nb_Commit = 0
+for commit in data:
+    Nb_Commit += 1
+    for change in commit['changes']:
+        smell = change['smells']
+        for s in smell.keys():
+            if(s in smells_count):
+                smells_count[s] = smells_count[s] + len(change['smells'][s])
+for type_smell in smells_count:
+    print('Nombre de smells du type', type_smell, ':', smells_count[type_smell])
 
 # Pour chaque type de smell, on va stocker les valeurs (poids) pour chacun des fichiers de data.json
 for smell in smells:
@@ -82,3 +99,6 @@ with open('set_smelly.json','w') as outfile:
 
 with open('seuil_poids_smells.json','w') as outfile2:
     json.dump(smells_seuil,outfile2)
+
+with open('smells_values.json', 'w') as outfile3:
+    json.dump(smells_values, outfile3)
