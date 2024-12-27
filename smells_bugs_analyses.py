@@ -1,22 +1,22 @@
 import subprocess
 import os
 
-# Projets à traiter
-projects = ['expressjs/express','bower/bower','less/less.js','request/request','gruntjs/grunt','jquery/jquery','vuejs/vue','ramda/ramda','Leaflet/Leaflet','hexojs/hexo','chartjs/Chart.js','webpack/webpack','moment/moment','webtorrent/webtorrent','riot/riot']
+# Progetti da trattare
+projects = ['expressjs/express']
 
-# Pour chacun des projets
+# Per ciascun progetto
 for project in projects:
 
-    # On se place dans le répertoire du projet
-    print('Le projet',project,'est traité !')
+    # Ci spostiamo nella directory del progetto
+    print('Il progetto',project,'è in fase di trattamento!')
     os.chdir(project.split('/')[0])
 
-    # On génère les données à analyser (liens entre fix bugs et code smells)
+    # Generiamo i dati da analizzare (collegamenti tra bug risolti e code smells)
     subprocess.run(['python3','smelly_buggy.py'])
 
-    # On génère les courbes de survies pour chaque type de variable et type d'analyse, à l'aide d'un modèle Cox
+    # Generiamo le curve di sopravvivenza per ciascun tipo di variabile e tipo di analisi, utilizzando un modello di Cox
     subprocess.run(['Rscript','analyze2.r'])
 
-    # On revient dans le répertoire parent
+    # Torniamo nella directory principale
     os.chdir('..')
     print()

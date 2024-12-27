@@ -1,67 +1,67 @@
 import subprocess
 import os
 
-# Projets à traiter
-projects = ['expressjs/express','bower/bower','less/less.js','request/request','gruntjs/grunt','jquery/jquery','vuejs/vue','ramda/ramda','Leaflet/Leaflet','hexojs/hexo','chartjs/Chart.js','webpack/webpack','moment/moment','webtorrent/webtorrent','riot/riot']
+# Progetti da elaborare
+projects = ['expressjs/express']
 
-# Pour chacun des projets
+# Per ogni progetto
 for project in projects:
 
-    # On se place dans le répertoire du projet
-    print('Le projet',project,'est traité !')
+    # Ci spostiamo nella directory del progetto
+    print('Il progetto',project,'è in fase di elaborazione!')
     os.chdir(project.split('/')[0])
 
-    # On copie le projet depuis github
+    # Cloniamo il progetto da GitHub
     subprocess.run(['rm','-rf','uut'])
     subprocess.run(['git','clone','https://github.com/'+project+'.git','uut'])
 
-    # On récupère tous les commits du projet
+    # Recuperiamo tutti i commit del progetto
     subprocess.run(['rm','-rf','commits-data'])
     subprocess.run(['mkdir','commits-data'])
     os.system('node commits.js > /dev/null')
 
-    # On clean les informations sur les commits du projet
+    # Puliamo i dati dei commit del progetto
     subprocess.run(['rm','-rf','commits-clean'])
     subprocess.run(['mkdir','commits-clean'])
     subprocess.run(['node','clean.js'])
 
-    # On réunit les informations concernant les smells qui apparaissent tout au long du projet
+    # Raccogliamo le informazioni sugli smells che appaiono durante tutto il progetto
     subprocess.run(['rm','-f','report.txt'])
     os.system('node report.js > report.txt')
 
-    # On réunit les informations concernant les issues
+    # Raccogliamo le informazioni sui problemi (issues)
     subprocess.run(['rm','-f','issues.json'])
     os.system('node issues.js '+project+' > issues.json')
 
-    # On combine les informations de traçage des smells et des bugs, et on enregistre un premier traçage des smells
+    # Combiniamo le informazioni di tracciamento degli smells e dei bug, e salviamo un primo tracciamento degli smells
     subprocess.run(['rm','-f','tracing_bugs_with_false_positive.txt'])
     os.system('node combine.js > tracing_bugs_with_false_positive.txt')
 
-    # On enlève les bugs qui correspondent à des faux positifs introduits par l'algorithme SZZ
+    # Rimuoviamo i bug che corrispondono a falsi positivi introdotti dall'algoritmo SZZ
     subprocess.run(['rm','-f','tracing_bugs.txt'])
     os.system('python3 remove_buggy_false_positive.py > tracing_bugs.txt')
 
-    # On trace les emplacements des bugs potentiels
+    # Tracciamo i luoghi dei bug potenziali
     subprocess.run(['rm','-f','emplacements_bugs.txt'])
     os.system('python3 tracing_bugs_simple.py > emplacements_bugs.txt')
 
-    # On trace les emplacements des bugs potentiels mais au sens large, en considérant les dépendances
+    # Tracciamo i luoghi dei bug potenziali in modo più ampio, considerando le dipendenze
     subprocess.run(['rm','-f','emplacements_bugs_large.txt'])
     os.system('python3 tracing_bugs_large.py > emplacements_bugs_large.txt')
 
-    # On identifie les fichiers smelly
+    # Identifichiamo i file "smelly" (con cattive pratiche)
     subprocess.run(['rm','-f','smells_count.txt'])
     os.system('python3 set_smelly.py > smells_count.txt')
 
-    # On affiche les boxplots pour chaque type de smell non booléens, quand c'est possible, pour justifier le seuil de poids
+    # Visualizziamo i boxplot per ogni tipo di smell non booleano, quando possibile, per giustificare la soglia di peso
     subprocess.run(['Rscript','boxplot_smells_values.r'])
 
-    # On remet en ordre les commits
+    # Rimettiamo in ordine i commit
     subprocess.run(['python3','commit_by_date.py'])
 
-    # On revient dans le répertoire parent
+    # Torniamo nella directory principale
     os.chdir('..')
     print()
 
-    # On attend (pour éviter les erreur API rate limit)
+    # Aspettiamo (per evitare errori di limite API)
     subprocess.run(['sleep','3600'])
