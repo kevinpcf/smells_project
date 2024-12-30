@@ -2,7 +2,7 @@ import subprocess
 import os
 
 # Progetti da elaborare
-projects = ['expressjs/express','bower/bower','less/less.js','request/request','gruntjs/grunt','jquery/jquery','vuejs/vue','ramda/ramda','Leaflet/Leaflet','hexojs/hexo','chartjs/Chart.js','webpack/webpack','moment/moment','webtorrent/webtorrent','riot/riot']
+projects = ['vesparny/fair-analytics']
 
 # Per ogni progetto
 for project in projects:
