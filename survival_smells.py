@@ -1,26 +1,26 @@
 import subprocess
 import os
 
-# Projets à traiter
+# Progetti da trattare
 projects = ['expressjs/express','bower/bower','less/less.js','request/request','gruntjs/grunt','jquery/jquery','vuejs/vue','ramda/ramda','Leaflet/Leaflet','hexojs/hexo','chartjs/Chart.js','webpack/webpack','moment/moment','webtorrent/webtorrent','riot/riot']
 
-# Pour chacun des projets
+# Per ciascun progetto
 for project in projects:
 
-    # On se place dans le répertoire du projet
-    print('Le projet',project,'est traité !')
+    # Ci si posiziona nella directory del progetto
+    print('Il progetto', project, 'è in elaborazione!')
     os.chdir(project.split('/')[0])
 
-    # On génère les données de survies pour chacun des types de smell
-    subprocess.run(['python3','survival_code_smells.py','0.7'])
+    # Si generano i dati di sopravvivenza per ciascun tipo di smell
+    subprocess.run(['python3', 'survival_code_smells.py', '0.7'])
 
-    # On génère les courbes de survies pour chaque type de smell, à l'aide d'un modèle Cox
-    subprocess.run(['Rscript','analyze.r'])
+    # Si generano le curve di sopravvivenza per ogni tipo di smell, utilizzando un modello di Cox
+    subprocess.run(['Rscript', 'analyze.r'])
 
-    # On refait de même avec une autre échelle (le nombre de commits au lieu du nombre de jours)
-    subprocess.run(['python3','survival_code_smells_commit_scale.py','0.7'])
-    subprocess.run(['Rscript','analyze_commit_scale.r'])
+    # Si ripete lo stesso con un'altra scala (il numero di commit invece del numero di giorni)
+    subprocess.run(['python3', 'survival_code_smells_commit_scale.py', '0.7'])
+    subprocess.run(['Rscript', 'analyze_commit_scale.r'])
 
-    # On revient dans le répertoire parent
+    # Si ritorna alla directory padre
     os.chdir('..')
     print()
